@@ -12,8 +12,11 @@
 
       <div id="app">
 
-          <div v-for="i in ['btn-danger', 'btn-primary', 'btn-warning', 'btn-success']">
-              <simonbuttons v-bind:colorclass="i"></simonbuttons>
+          <div class="board row">
+              <div v-for="i in ['btn-danger', 'btn-primary', 'btn-warning', 'btn-success']">
+                  <simonbuttons v-bind:colorclass="i"></simonbuttons>
+              </div>
+              <button class="start" v-on:click="getRandomButton">Start</button>
           </div>
 
       </div>
