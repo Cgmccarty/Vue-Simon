@@ -3,6 +3,7 @@ button {
   height: 100px;
   border-radius: 100% !important;
   display: inline;
+  opacity: .5;
 }
 
 .btn {
@@ -17,4 +18,11 @@ button {
 .start {
   background-color: black;
   color: white;
+}
+
+.active btn:click{
+
+  background-color: inherit;
+  opacity: 100%;
+
 }

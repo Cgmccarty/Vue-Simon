@@ -1,6 +1,6 @@
 Vue.component('simonbuttons', {
 
-    props: ['colorclass'],
+    props: ['colorclass', 'isActive'],
 
     method: {
 
@@ -10,7 +10,9 @@ Vue.component('simonbuttons', {
 
     },
 
+  
     template: '<button class="btn" v-on:click="this.$parent.selected" v-bind:class="colorclass">&nbsp</button>'
+
 
 });
 
@@ -20,12 +22,12 @@ let app = new Vue ({
     el: "#app",
 
     data: {
+
         turn: 1,
         color: ['btn-danger', 'btn-primary', 'btn-warning', 'btn-success'],
         order: [],
         isActive: false,
         sequence: ['danger', 'warning', 'success', 'primary']
-
     },
 
     methods: {
@@ -40,5 +42,6 @@ let app = new Vue ({
             this.isActive = true;
         }
     }
+  }
 
 });
