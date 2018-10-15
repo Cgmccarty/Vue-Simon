@@ -27,6 +27,7 @@ let app = new Vue ({
 
         selected: function(item){
           this.active= item;
+
         //getRandomButton: function () {
             //let randomButton = Math.floor(Math.random() * this.color.length);
             //this.selected (randomButton);
