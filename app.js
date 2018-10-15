@@ -4,9 +4,13 @@ Vue.component('simonbuttons', {
 
     method: {
 
+        // selected: function () {
+        //   this.isActive = true;
+        // }
+
     },
 
-    template: '<button class="btn" v-bind:class="colorclass">&nbsp</button>'
+    template: '<button class="btn" v-on:click="this.$parent.selected" v-bind:class="colorclass">&nbsp</button>'
 
 });
 
@@ -17,14 +21,23 @@ let app = new Vue ({
 
     data: {
         turn: 1,
-        color: ['danger', 'primary', 'warning', 'success'],
-        order: []
+        color: ['btn-danger', 'btn-primary', 'btn-warning', 'btn-success'],
+        order: [],
+        isActive: false,
+        sequence: ['danger', 'warning', 'success', 'primary']
+
     },
 
     methods: {
+
         getRandomButton: function () {
             let randomButton = Math.floor(Math.random() * this.color.length);
-            if (this.color[randomButton])
+            return randomButton;
+        },
+
+        selected: function () {
+            console.log(this.isActive);
+            this.isActive = true;
         }
     }
 
