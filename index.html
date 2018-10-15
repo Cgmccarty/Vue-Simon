@@ -14,9 +14,9 @@
 
           <div class="board row">
               <div v-for="i in ['btn-danger', 'btn-primary', 'btn-warning', 'btn-success']">
-                  <simonbuttons v-bind:colorclass="i"></simonbuttons>
+                  <simonbuttons v-bind:colorclass="i"v-bind:class="isActive"></simonbuttons>
               </div>
-              <button class="start" v-on:click="getRandomButton">Start</button>
+              <button class="start" v-on:click="start">Start</button>
           </div>
 
       </div>
