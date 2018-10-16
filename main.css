@@ -12,60 +12,9 @@
   color: white;
   width: 100px;
   height: 50px;
+  opacity: 1;
 }
 
-.btn:focus {
-  outline: none;
-}
-
-.btn:active {
-  outline: none;
-  opacity: 100%;
-}
-
-.red {
-  background-color: red;
-  opacity: 50%;
-  border-top-left-radius: 100%
-}
-
-.btn.red .red {
-  background-color: darkred;
-}
-
-.blue {
-  background-color: blue;
-  opacity: 50%;
-  border-top-right-radius: 100%;
-}
-
-.btn.blue .blue {
-  background-color: darkblue;
-}
-
-.yellow {
-  background-color: gold;
-  opacity: 50%;
-  border-bottom-left-radius: 100%;
-}
-
-.btn.yellow .yellow {
-  background-color: orange;
-}
-
-.green {
-  background-color: green;
-  opacity: 50%;
-  border-bottom-right-radius: 100%;
-}
-
-.btn.green .green {
-  background-color: darkgreen;
-}
-
-.active btn:click{
-
-  background-color: inherit;
-  opacity: 100%;
-
+.bg-danger.red, .bg-primary.blue, .bg-warning.yellow, .bg-success.green {
+  opacity: 1;
 }

@@ -14,14 +14,14 @@
 
         <div>
             <div class="row">
-                <button class="btn red" href="#" v-on:click="selected(0);">&nbsp</button>
-                <button class="btn blue" href="#" v-on:click="selected(1);">&nbsp</button>
+                <button v-bind:class="tapped" class="btn bg-danger" href="#" v-on:click="makeActive('red');" style="opacity: 50%; border-top-left-radius: 100%;">&nbsp</button>
+                <button v-bind:class="tapped" class="btn bg-primary" href="#" v-on:click="makeActive('blue');" style="opacity: 50%; border-top-right-radius: 100%;">&nbsp</button>
             </div>
             <div class="row">
-                <button class="btn yellow" href="#" v-on:click="selected(2);">&nbsp</button>
-                <button class="btn green" href="#" v-on:click="selected(3);">&nbsp</button>
+                <button v-bind:class="tapped" class="btn bg-warning" href="#" v-on:click="makeActive('yellow');" style="opacity: 50%; border-bottom-left-radius: 100%;">&nbsp</button>
+                <button v-bind:class="tapped" class="btn bg-success" href="#" v-on:click="makeActive('green');" style="opacity: 50%; border-bottom-right-radius: 100%;">&nbsp</button>
             </div>
-            <button class="btn" id="start" href="#" v-on:click="getRandomButton()">Start</button>
+            <button class="btn" id="start" href="#" v-on:click="playSequence()">Start</button>
         </div>
 
       </div>
