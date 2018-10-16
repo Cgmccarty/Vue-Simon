@@ -24,7 +24,7 @@ let app = new Vue ({
         color: ['red', 'blue', 'yellow', 'green'],
         order: [],
         isActive: '',
-        sequence: ['', 'btn-warning', 'btn-success', 'btn-primary']
+        sequence: ['']
 
     },
 
