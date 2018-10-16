@@ -8,7 +8,8 @@ let app = new Vue ({
         colors: ['red', 'blue', 'green', 'yellow'],
         sequence: [],
         tapped: '',
-        userTapped: []
+        userTapped: [],
+        timer: 10
 
     },
 
@@ -17,7 +18,7 @@ let app = new Vue ({
         playSequence: function () {
             let self = this;
             self.prompt = "Pay attention!"
-            let randomButton = Math.floor(Math.random() * 3);
+            let randomButton = Math.floor(Math.random() * 4);
               self.sequence.push(self.colors[randomButton]);
 
 
@@ -30,7 +31,12 @@ let app = new Vue ({
             } else {
                 clearInterval(intervalId);
                 self.btnTap = 0;
-                self.prompt = "you try NOW";
+                self.prompt = "show me your intellect";
+                setInterval(function (){
+                  if(self.timer > 0){
+                    self.timer--;
+                    }
+                }, 1000)
                 }
 
           }, 1000);
@@ -52,12 +58,20 @@ let app = new Vue ({
           self.highlight(color);
 
           if (self.userTapped.join("") === self.sequence.join("")) {
+
             self.userTapped = [];
             self.btnTap = 0;
-            self.playSequence();
+            setTimeout(function (){
+              this.timer = 10;
+              self.playSequence();
 
-          } else {
-            self.prompt = "LOSER";
+            }, 1000);
+
+          } else if (self.userTapped.length == self.sequence.length) {
+            self.userTapped = [];
+            self.sequence = [];
+            self.btnTap = 0;
+            self.prompt = "LOSER --please press start to play again..if you dare.";
           }
         }
 
