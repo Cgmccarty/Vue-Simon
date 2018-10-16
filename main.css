@@ -1,12 +1,19 @@
-button {
+
+
+.btn {
   width: 100px;
   height: 100px;
   border-radius: 100% !important;
   display: inline;
 }
 
-.btn {
-  opacity: 50% !important;
+#start {
+  background-color: black;
+  color: white;
+}
+
+.btn:focus {
+  outline: none;
 }
 
 .btn:active {
@@ -14,7 +21,38 @@ button {
   opacity: 100%;
 }
 
-.start {
-  background-color: black;
-  color: white;
+.red {
+  background-color: red;
+  opacity: 50%;
+}
+
+.btn.red .red {
+  background-color: darkred;
+}
+
+.blue {
+  background-color: blue;
+  opacity: 50%;
+}
+
+.btn.blue .blue {
+  background-color: darkblue;
+}
+
+.yellow {
+  background-color: gold;
+  opacity: 50%;
+}
+
+.btn.yellow .yellow {
+  background-color: orange;
+}
+
+.green {
+  background-color: green;
+  opacity: 50%;
+}
+
+.btn.green .green {
+  background-color: darkgreen;
 }

@@ -12,12 +12,17 @@
 
       <div id="app">
 
-          <div class="board row">
-              <div v-for="i in color">
-                  <simonbuttons v-bind:colorclass="i" v-bind:class="{ active: isActive }"></simonbuttons>
-              </div>
-              <button class="start" v-on:click="getRandomButton()">Start</button>
-          </div>
+        <div>
+            <div class="row">
+                <button class="btn red" href="#" v-on:click="selected(0);">&nbsp</button>
+                <button class="btn blue" href="#" v-on:click="selected(1);">&nbsp</button>
+            </div>
+            <button class="btn" id="start" href="#" v-on:click="getRandomButton()">Start</button>
+            <div class="row">
+                <button class="btn yellow" href="#" v-on:click="selected(2);">&nbsp</button>
+                <button class="btn green" href="#" v-on:click="selected(3);">&nbsp</button>
+            </div>
+        </div>
 
       </div>
 
