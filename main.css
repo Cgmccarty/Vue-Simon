@@ -4,6 +4,7 @@
   width: 150px;
   height: 150px;
   display: inline;
+  opacity: .5;
 }
 
 #start {
@@ -60,4 +61,11 @@
 
 .btn.green .green {
   background-color: darkgreen;
+}
+
+.active btn:click{
+
+  background-color: inherit;
+  opacity: 100%;
+
 }
