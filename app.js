@@ -8,7 +8,7 @@ let app = new Vue ({
         colors: ['red', 'blue', 'green', 'yellow'],
         sequence: [],
         tapped: '',
-        userInput: []
+        userTapped: []
 
     },
 
@@ -25,7 +25,7 @@ let app = new Vue ({
 
 
             if ( self.btnTap < self.sequence.length){
-              self.makeActive(self.colors[self.btnTap]);
+              self.highlight(self.sequence[self.btnTap]);
               self.btnTap++;
             } else {
                 clearInterval(intervalId);
@@ -36,15 +36,32 @@ let app = new Vue ({
           }, 1000);
         },
 
-        makeActive: function (color) {
+        highlight: function (color) {
 
             let self = this;
 
             self.tapped = color;
             setTimeout(function() {
                 self.tapped = '';
-            }, 100);
+            }, 500);
+        },
+
+        makeActive: function (color) {
+          let self = this;
+          self.userTapped.push(color);
+          self.highlight(color);
+
+          if (self.userTapped.join("") === self.sequence.join("")) {
+            self.userTapped = [];
+            self.btnTap = 0;
+            self.playSequence();
+
+          } else {
+            self.prompt = "LOSER";
+          }
         }
+
+
     }
 
 });
