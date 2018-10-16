@@ -3,9 +3,9 @@ let app = new Vue ({
     el: "#app",
 
     data: {
-
+        prompt: "We're about to start.",
         turn: 0,
-        sequence: [],
+        sequence: ['red', 'green', 'blue', 'yellow', 'red,' ],
         tapped: ''
 
     },
@@ -15,6 +15,8 @@ let app = new Vue ({
         playSequence: function () {
 
             let self = this;
+            self.prompt = "Pay attention!"
+            
         },
 
         makeActive: function (color) {
@@ -23,7 +25,7 @@ let app = new Vue ({
 
             self.tapped = color;
             setTimeout(function() {
-                self.currentButton = '';
+                self.tapped = '';
             }, 300);
         }
     }

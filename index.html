@@ -21,6 +21,7 @@
                 <button v-bind:class="tapped" class="btn bg-warning" href="#" v-on:click="makeActive('yellow');" style="opacity: 50%; border-bottom-left-radius: 100%;">&nbsp</button>
                 <button v-bind:class="tapped" class="btn bg-success" href="#" v-on:click="makeActive('green');" style="opacity: 50%; border-bottom-right-radius: 100%;">&nbsp</button>
             </div>
+                <h4 v-html="prompt"></h4>
             <button class="btn" id="start" href="#" v-on:click="playSequence()">Start</button>
         </div>
 
