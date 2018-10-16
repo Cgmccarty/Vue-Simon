@@ -12,14 +12,16 @@
 
       <div id="app">
 
+        <p v-html="timer"></p>
+
         <div>
             <div class="row">
-                <button v-bind:class="tapped" class="btn bg-danger" href="#" v-on:click="makeActive('red');" style="opacity: 50%; border-top-left-radius: 100%;">&nbsp</button>
-                <button v-bind:class="tapped" class="btn bg-primary" href="#" v-on:click="makeActive('blue');" style="opacity: 50%; border-top-right-radius: 100%;">&nbsp</button>
+                <button id="red" v-bind:class="tapped" class="btn bg-danger" href="#" v-on:click="makeActive('red');" style="opacity: 50%; border-top-left-radius: 100%;">&nbsp</button>
+                <button id="blue" v-bind:class="tapped" class="btn bg-primary" href="#" v-on:click="makeActive('blue');" style="opacity: 50%; border-top-right-radius: 100%;">&nbsp</button>
             </div>
             <div class="row">
-                <button v-bind:class="tapped" class="btn bg-warning" href="#" v-on:click="makeActive('yellow');" style="opacity: 50%; border-bottom-left-radius: 100%;">&nbsp</button>
-                <button v-bind:class="tapped" class="btn bg-success" href="#" v-on:click="makeActive('green');" style="opacity: 50%; border-bottom-right-radius: 100%;">&nbsp</button>
+                <button id="yellow" v-bind:class="tapped" class="btn bg-warning" href="#" v-on:click="makeActive('yellow');" style="opacity: 50%; border-bottom-left-radius: 100%;">&nbsp</button>
+                <button id="green" v-bind:class="tapped" class="btn bg-success" href="#" v-on:click="makeActive('green');" style="opacity: 50%; border-bottom-right-radius: 100%;">&nbsp</button>
             </div>
             <h4 v-html="prompt"></h4>
             <button class="btn" id="start" href="#" v-on:click="playSequence();">Start</button>

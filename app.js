@@ -4,12 +4,13 @@ let app = new Vue ({
 
     data: {
 
-        prompt: "We\'re about to start",
+        prompt: "Press Start!",
         btnTap: 0,
         colors: ['red', 'blue', 'yellow', 'green'],
         sequence: [],
         tapped: '',
-        userTaps: []
+        userTaps: [],
+        timer: 10
 
     },
 
@@ -18,8 +19,13 @@ let app = new Vue ({
         playSequence: function () {
 
             let self = this;
+            self.disable('red');
+            self.disable('blue');
+            self.disable('yellow');
+            self.disable('green');
+            self.disable('start');
             self.prompt = 'Pay attention!';
-            let randomButton = Math.floor(Math.random() * 3);
+            let randomButton = Math.floor(Math.random() * 4);
             self.sequence.push(self.colors[randomButton]);
 
             let intervalId = setInterval(function () {
@@ -31,7 +37,26 @@ let app = new Vue ({
                 else {
                     clearInterval(intervalId);
                     self.btnTap = 0;
-                    self.prompt = "you try NOW";
+                    self.enable('red');
+                    self.enable('blue');
+                    self.enable('yellow');
+                    self.enable('green');
+                    self.prompt = "NOW, you try!";
+
+                    let intervalTwo = setInterval(function () {
+                        if (self.timer > 0) {
+                            self.timer--;
+                        }
+                        else {
+                          clearInterval(intervalTwo);
+                          self.prompt = 'LOSER! Press start to play again.';
+                          self.userTaps = [];
+                          self.btnTaps = 0;
+                          self.sequence = [];
+                          self.timer = 10;
+                          self.enable('start');
+                        }
+                    }, 1000);
                 }
             }, 1000);
         },
@@ -51,18 +76,33 @@ let app = new Vue ({
             let self = this;
             self.userTaps.push(color);
             self.highlight(color);
-
+            self.timer = 10;
 
             if (self.userTaps.join("") === self.sequence.join("")) {
                 self.userTaps = [];
                 self.btnTaps = 0;
-                self.playSequence();
+                setTimeout(function() {
+                    self.playSequence();
+                }, 1000);
             }
-            else {
-                self.prompt = 'LOSER!';
+            else if (self.userTaps.length == self.sequence.length) {
+                self.prompt = 'LOSER! Press start to play again.';
+                self.userTaps = [];
+                self.btnTaps = 0;
+                self.sequence = [];
+                self.timer = 10;
+                self.enable('start');
             }
 
 
+        },
+
+        disable: function (btnId) {
+            document.getElementById(btnId).disabled = true;
+        },
+
+        enable: function (btnId) {
+            document.getElementById(btnId).disabled = false;
         }
 
 
