@@ -1,0 +1,25 @@
+{
+  "name": "vue-simon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cgmccarty/Vue-Simon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cgmccarty/Vue-Simon/issues"
+  },
+  "homepage": "https://github.com/Cgmccarty/Vue-Simon#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
